@@ -1,0 +1,19 @@
+// Main Styles
+// Designed by Dev Thagichu
+
+// Fonts
+
+$mainFont: "Poppins", sans-serif;
+
+* {
+  font-family: $mainFont;
+}
+
+// Reset Default Styles
+
+*,
+html {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}

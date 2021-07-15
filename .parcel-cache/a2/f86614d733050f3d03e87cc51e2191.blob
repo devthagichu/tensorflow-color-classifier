@@ -1,0 +1,112 @@
+var helpers = require("../../../node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+helpers.prelude(module);
+try {
+  var _parcelHelpers = require("@parcel/transformer-js/lib/esmodule-helpers.js");
+  _parcelHelpers.defineInteropFlag(exports);
+  var _react = require("react");
+  var _reactDefault = _parcelHelpers.interopDefault(_react);
+  require("@tensorflow/tfjs");
+  var _jsxFileName = "/home/thagichu/Desktop/SANDBOX/tensorflow-color-classifier/src/screens/HomeScreen/index.jsx", _s = $RefreshSig$();
+  // import data from "./colorData.json";
+  const generateRandomColor = () => {
+    return Math.floor(Math.random() * 256);
+  };
+  function HomeScreen() {
+    _s();
+    const [data, setdata] = _react.useState([]);
+    const [red, setRed] = _react.useState();
+    const [green, setGreen] = _react.useState();
+    const [blue, setBlue] = _react.useState();
+    _react.useEffect(() => {
+      setRed(generateRandomColor());
+      setGreen(generateRandomColor());
+      setBlue(generateRandomColor());
+      return () => {};
+    }, [data]);
+    return (
+      /*#__PURE__*/_reactDefault.default.createElement("div", {
+        style: {
+          textAlign: "center",
+          maxWidth: 720,
+          margin: "0 auto"
+        },
+        __self: this,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 23,
+          columnNumber: 5
+        }
+      }, /*#__PURE__*/_reactDefault.default.createElement("h1", {
+        __self: this,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 24,
+          columnNumber: 7
+        }
+      }, " Training Data 📦"), /*#__PURE__*/_reactDefault.default.createElement("div", {
+        style: {
+          display: "flex"
+        },
+        __self: this,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 25,
+          columnNumber: 7
+        }
+      }, /*#__PURE__*/_reactDefault.default.createElement("div", {
+        style: {
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          width: 100,
+          height: 100,
+          borderRadius: 10,
+          borderColor: "#ddd",
+          borderWidth: 10,
+          backgroundColor: `rgb(${red},${green},${blue})`
+        },
+        __self: this,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 26,
+          columnNumber: 9
+        }
+      }, /*#__PURE__*/_reactDefault.default.createElement("span", {
+        __self: this,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 39,
+          columnNumber: 11
+        }
+      }, "Random")), /*#__PURE__*/_reactDefault.default.createElement("div", {
+        style: {
+          padding: "1rem"
+        },
+        __self: this,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 41,
+          columnNumber: 9
+        }
+      }, /*#__PURE__*/_reactDefault.default.createElement("h3", {
+        __self: this,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 42,
+          columnNumber: 11
+        }
+      }, "What color is this?"))))
+    );
+  }
+  _s(HomeScreen, "/48nfM1WNv5ODcNZPbz7X8dkGOQ=");
+  _c = HomeScreen;
+  exports.default = HomeScreen;
+  var _c;
+  $RefreshReg$(_c, "HomeScreen");
+  helpers.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}

@@ -1,0 +1,265 @@
+var helpers = require("../../../node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+helpers.prelude(module);
+try {
+  var _parcelHelpers = require("@parcel/transformer-js/lib/esmodule-helpers.js");
+  _parcelHelpers.defineInteropFlag(exports);
+  var _react = require("react");
+  var _reactDefault = _parcelHelpers.interopDefault(_react);
+  require("@tensorflow/tfjs");
+  var _jsxFileName = "/home/thagichu/Desktop/SANDBOX/tensorflow-color-classifier/src/screens/HomeScreen/index.jsx", _s = $RefreshSig$();
+  // import data from "./colorData.json";
+  const generateRandomColor = () => {
+    return Math.floor(Math.random() * 256);
+  };
+  function HomeScreen() {
+    _s();
+    const [data, setdata] = _react.useState([]);
+    const [red, setRed] = _react.useState();
+    const [green, setGreen] = _react.useState();
+    const [blue, setBlue] = _react.useState();
+    const [labels, setLabels] = _react.useState(["Red", "Green", "Blue", "Yellow", "Brown", "Purple", "Pink", "Grey"]);
+    _react.useEffect(() => {
+      setRed(generateRandomColor());
+      setGreen(generateRandomColor());
+      setBlue(generateRandomColor());
+      return () => {};
+    }, [data]);
+    const onSelectColor = color => {
+      setdata(oldData => [...oldData, {
+        red,
+        green,
+        blue,
+        label: color
+      }]);
+    };
+    const prepData = () => {
+      let inputColors = [];
+      let outputLabels = [];
+      const MAX_RANGE = 255;
+      for (let index = 0; index < data.length; index++) {
+        const item = data[index];
+        inputColors.push([item.red / MAX_RANGE, item.green / MAX_RANGE, item.blue / MAX_RANGE]);
+        outputLabels.push(labels.indexOf(item.label));
+      }
+      console.log(inputColors);
+      console.log(outputLabels);
+    };
+    return (
+      /*#__PURE__*/_reactDefault.default.createElement("div", {
+        style: {
+          textAlign: "center",
+          maxWidth: 900,
+          margin: "0 auto"
+        },
+        __self: this,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 55,
+          columnNumber: 5
+        }
+      }, /*#__PURE__*/_reactDefault.default.createElement("h1", {
+        __self: this,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 56,
+          columnNumber: 7
+        }
+      }, " Training Data 📦"), /*#__PURE__*/_reactDefault.default.createElement("h3", {
+        __self: this,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 57,
+          columnNumber: 7
+        }
+      }, "Select Training Data"), /*#__PURE__*/_reactDefault.default.createElement("h3", {
+        __self: this,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 58,
+          columnNumber: 7
+        }
+      }, "What color is this?"), /*#__PURE__*/_reactDefault.default.createElement("div", {
+        style: {
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "center",
+          alignItems: "center",
+          marginBottom: "1rem"
+        },
+        __self: this,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 59,
+          columnNumber: 7
+        }
+      }, /*#__PURE__*/_reactDefault.default.createElement("div", {
+        style: {
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          width: 200,
+          height: 200,
+          borderRadius: 10,
+          borderColor: "#000000",
+          borderWidth: 10,
+          backgroundColor: `rgb(${red},${green},${blue})`
+        },
+        __self: this,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 68,
+          columnNumber: 9
+        }
+      }), /*#__PURE__*/_reactDefault.default.createElement("div", {
+        style: {
+          padding: "1rem",
+          display: "flex",
+          flexWrap: "wrap"
+        },
+        __self: this,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 82,
+          columnNumber: 9
+        }
+      }, labels.map(item => /*#__PURE__*/_reactDefault.default.createElement("div", {
+        onClick: () => onSelectColor(item),
+        style: {
+          backgroundColor: item,
+          padding: ".5rem 1rem",
+          margin: ".5rem",
+          color: "white",
+          borderRadius: ".5rem",
+          cursor: "pointer"
+        },
+        __self: this,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 91,
+          columnNumber: 13
+        }
+      }, item)))), /*#__PURE__*/_reactDefault.default.createElement("div", {
+        __self: this,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 108,
+          columnNumber: 7
+        }
+      }, /*#__PURE__*/_reactDefault.default.createElement("h3", {
+        __self: this,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 109,
+          columnNumber: 9
+        }
+      }, "Selected Training Data"), /*#__PURE__*/_reactDefault.default.createElement("div", {
+        onClick: () => setdata([]),
+        style: {
+          margin: ".5rem",
+          color: "red",
+          cursor: "pointer",
+          textTransform: "uppercase"
+        },
+        __self: this,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 110,
+          columnNumber: 9
+        }
+      }, "Reset Training Data"), /*#__PURE__*/_reactDefault.default.createElement("div", {
+        className: "",
+        __self: this,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 122,
+          columnNumber: 9
+        }
+      }, /*#__PURE__*/_reactDefault.default.createElement("div", {
+        style: {
+          display: "flex",
+          flexWrap: "wrap"
+        },
+        __self: this,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 123,
+          columnNumber: 11
+        }
+      }, data.map(item => {
+        return (
+          /*#__PURE__*/_reactDefault.default.createElement("div", {
+            __self: this,
+            __source: {
+              fileName: _jsxFileName,
+              lineNumber: 126,
+              columnNumber: 17
+            }
+          }, /*#__PURE__*/_reactDefault.default.createElement("div", {
+            style: {
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+              borderRadius: 10,
+              margin: ".3rem",
+              width: 100,
+              height: 100,
+              backgroundColor: `rgb(${item.red},${item.green},${item.blue})`
+            },
+            __self: this,
+            __source: {
+              fileName: _jsxFileName,
+              lineNumber: 127,
+              columnNumber: 19
+            }
+          }, /*#__PURE__*/_reactDefault.default.createElement("span", {
+            __self: this,
+            __source: {
+              fileName: _jsxFileName,
+              lineNumber: 139,
+              columnNumber: 21
+            }
+          }, item.label)))
+        );
+      })))), /*#__PURE__*/_reactDefault.default.createElement("div", {
+        __self: this,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 148,
+          columnNumber: 7
+        }
+      }, /*#__PURE__*/_reactDefault.default.createElement("h3", {
+        __self: this,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 149,
+          columnNumber: 9
+        }
+      }, "Train Model with Selected Training Data"), /*#__PURE__*/_reactDefault.default.createElement("div", {
+        onClick: () => prepData(),
+        style: {
+          margin: ".5rem",
+          color: "red",
+          cursor: "pointer",
+          textTransform: "uppercase"
+        },
+        __self: this,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 150,
+          columnNumber: 9
+        }
+      }, "Traing Model")))
+    );
+  }
+  _s(HomeScreen, "lOmAQyxbMLSx/DTqUMjqYRxtNls=");
+  _c = HomeScreen;
+  exports.default = HomeScreen;
+  var _c;
+  $RefreshReg$(_c, "HomeScreen");
+  helpers.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}

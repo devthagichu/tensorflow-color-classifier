@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="abcd8c578ec39a656f82af5ecfb61780" rel="stylesheet">
+    <title>Dev Thagichu - React Parcel Starter</title>
+  </head>
+  <body>
+    <div id="app"></div>
+    <script src="4bce6a4b1f9e3d6f1ff9fe1efe83be58"></script>
+  </body>
+</html>

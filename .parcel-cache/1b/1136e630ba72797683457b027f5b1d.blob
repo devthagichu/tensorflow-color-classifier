@@ -1,0 +1,89 @@
+var helpers = require("../../../node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+helpers.prelude(module);
+try {
+  var _parcelHelpers = require("@parcel/transformer-js/lib/esmodule-helpers.js");
+  _parcelHelpers.defineInteropFlag(exports);
+  var _react = require("react");
+  var _reactDefault = _parcelHelpers.interopDefault(_react);
+  require("@tensorflow/tfjs");
+  var _colorDataJson = require("./colorData.json");
+  var _colorDataJsonDefault = _parcelHelpers.interopDefault(_colorDataJson);
+  var _jsxFileName = "/home/thagichu/Desktop/SANDBOX/tensorflow-color-classifier/src/screens/HomeScreen/index.jsx";
+  function HomeScreen() {
+    return (
+      /*#__PURE__*/_reactDefault.default.createElement("div", {
+        __self: this,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 7,
+          columnNumber: 5
+        }
+      }, /*#__PURE__*/_reactDefault.default.createElement("h1", {
+        __self: this,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 8,
+          columnNumber: 7
+        }
+      }, "Home Screen ❤️‍🔥"), /*#__PURE__*/_reactDefault.default.createElement("div", {
+        className: "",
+        __self: this,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 9,
+          columnNumber: 7
+        }
+      }, /*#__PURE__*/_reactDefault.default.createElement("ul", {
+        __self: this,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 10,
+          columnNumber: 9
+        }
+      }, _colorDataJsonDefault.default.entries.map(item => {
+        return (
+          /*#__PURE__*/_reactDefault.default.createElement("li", {
+            __self: this,
+            __source: {
+              fileName: _jsxFileName,
+              lineNumber: 13,
+              columnNumber: 15
+            }
+          }, /*#__PURE__*/_reactDefault.default.createElement("div", {
+            style: {
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+              width: 100,
+              height: 100,
+              backgroundColor: `rgb(${item.r},${item.g},${item.b})`
+            },
+            __self: this,
+            __source: {
+              fileName: _jsxFileName,
+              lineNumber: 14,
+              columnNumber: 17
+            }
+          }, /*#__PURE__*/_reactDefault.default.createElement("span", {
+            __self: this,
+            __source: {
+              fileName: _jsxFileName,
+              lineNumber: 24,
+              columnNumber: 19
+            }
+          }, item.label)))
+        );
+      }))))
+    );
+  }
+  _c = HomeScreen;
+  exports.default = HomeScreen;
+  var _c;
+  $RefreshReg$(_c, "HomeScreen");
+  helpers.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
